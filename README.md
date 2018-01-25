@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## モデル、ビュー、コントローラ等以外の自作クラスをどこに置くか？
 
-Things you may want to cover:
+基本的に、autoloadできるファイルはapp/libの中に置きます。 
+autoloadできないファイルはlib/requiredの中に置きます。 
+（例：標準クラスやgem内のクラスの拡張、1ファイル内に複数のクラスが入っているファイルなど） 
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+`config/initializers/required.rb` により、`lib/required/*.rb` の全ファイルが`require`されます。 
